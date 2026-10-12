@@ -2,12 +2,25 @@
 	$parent: &;
 
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	z-index: 5;
 	width: 100%;
 	padding: 17px 0;
 	background: rgba(71, 100, 255, 0.31);
 	backdrop-filter: blur(7px);
+
+	@include min(dxxl) {
+		padding: vw(17) 0;
+	}
+
+	@include max(ti) {
+		height: 68px;
+	}
+
+	@include max(t) {
+		height: 141px;
+	}
 
 	&__container {
 		display: flex;
@@ -30,6 +43,11 @@
 		height: 26px;
 		transition: 0.3s ease;
 
+		@include min(dxxl) {
+			width: vw(41);
+			height: vw(26);
+		}
+
 		&:hover {
 			opacity: 0.7;
 		}
@@ -42,6 +60,12 @@
 		font-size: 13px;
 		line-height: 1.5;
 		margin-left: 210px;
+
+		@include min(dxxl) {
+			gap: vw(80);
+			font-size: vw(13);
+			margin-left: vw(210);
+		}
 
 		@include max(tl) {
 			margin-left: 0;
@@ -74,6 +98,10 @@
 		display: flex;
 		align-items: center;
 		gap: 20px;
+
+		@include min(dxxl) {
+			gap: vw(20);
+		}
 	}
 
 	&__socials-item {
@@ -87,6 +115,11 @@
 		svg {
 			width: 27px;
 			height: 27px;
+
+			@include min(dxxl) {
+				width: vw(27);
+				height: vw(27);
+			}
 		}
 	}
 
@@ -96,6 +129,10 @@
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 1;
+
+		@include min(dxxl) {
+			bottom: vw(30);
+		}
 
 		@include max(ti) {
 			left: 24px;
@@ -109,6 +146,10 @@
 			transform: none;
 			display: inline-flex;
 			margin-top: 40px;
+
+			@include min(dxxl) {
+				margin-top: vw(40);
+			}
 
 			#{$parent}__adv-tooltip {
 				left: 0;
@@ -130,11 +171,21 @@
 			font-size: 12px;
 			cursor: pointer;
 
+			@include min(dxxl) {
+				gap: vw(8);
+				font-size: vw(12);
+			}
+
 			&::before {
 				content: "";
 				width: 5px;
 				height: 5px;
 				background-color: $color-text;
+
+				@include min(dxxl) {
+					width: vw(5);
+					height: vw(5);
+				}
 			}
 		}
 	}
@@ -153,6 +204,14 @@
 		pointer-events: none;
 		transition: 0.3s ease;
 
+		@include min(dxxl) {
+			left: vw(-100);
+			width: vw(270);
+			border: vw(2) solid $color-button;
+			border-radius: vw(2);
+			padding: vw(20) vw(10);
+		}
+
 		@include max(ti) {
 			left: 0;
 		}
@@ -162,6 +221,10 @@
 		color: $color-text;
 		font-size: 12px;
 		line-height: 1.2;
+
+		@include min(dxxl) {
+			font-size: vw(12);
+		}
 
 		a {
 			color: $color-text;
@@ -176,6 +239,12 @@
 			margin-top: 12px;
 			padding-top: 12px;
 			border-top: 1px solid $color-text;
+
+			@include min(dxxl) {
+				margin-top: vw(12);
+				padding-top: vw(12);
+				border-top: vw(1) solid $color-text;
+			}
 		}
 	}
 }

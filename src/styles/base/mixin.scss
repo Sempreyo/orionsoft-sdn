@@ -44,18 +44,6 @@
 	@return $result;
 }
 
-@function vw1440($px) {
-	@return calc(($px/1440) * 100)+vw;
-}
-
 @function vw($px) {
-	@return calc(($px/1200) * 100)+vw;
-}
-
-@function vw991($px) {
-	@return calc(($px/991) * 100)+vw;
-}
-
-@function vw767($px) {
-	@return calc(($px/767) * 100)+vw;
+	@return calc(($px/1920) * 100)+vw;
 }

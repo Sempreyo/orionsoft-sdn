@@ -19,6 +19,15 @@
 	cursor: pointer;
 	transition: 0.3s ease;
 
+	@include min(dxxl) {
+		gap: vw(15);
+		max-width: vw(214);
+		width: 100%;
+		padding: vw(12) vw(15);
+		clip-path: polygon(0 0, calc(100% - (15 / 1920) * 100vw) 0, 100% calc((15 / 1920) * 100vw), 100% 100%, 0 100%);
+		font-size: vw(18);
+	}
+
 	@include max(d) {
 		font-size: fluid(17, 18, 576, 1280);
 	}
@@ -42,6 +51,11 @@
 	svg {
 		width: 17px;
 		height: 12px;
+
+		@include min(dxxl) {
+			width: vw(17);
+			height: vw(12);
+		}
 	}
 
 	&--small {
@@ -50,6 +64,14 @@
 		padding: 8px 12px;
 		clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
 		font-size: 12px;
+
+		@include min(dxxl) {
+			gap: vw(10);
+			max-width: vw(150);
+			padding: vw(8) vw(12);
+			clip-path: polygon(0 0, calc(100% - (8 / 1920) * 100vw) 0, 100% calc((8 / 1920) * 100vw), 100% 100%, 0 100%);
+			font-size: vw(12);
+		}
 
 		@include max(ti) {
 			padding: 12px 14px;
@@ -61,6 +83,11 @@
 		svg {
 			width: 12px;
 			height: 9px;
+
+			@include min(dxxl) {
+				width: vw(12);
+				height: vw(9);
+			}
 		}
 	}
 }

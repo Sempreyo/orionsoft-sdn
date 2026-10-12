@@ -4,6 +4,10 @@
 	height: 100%;
 	overflow: hidden;
 
+	@include min(dxxl) {
+		max-width: vw(630);
+	}
+
 	@include max(d) {
 		max-width: 520px;
 	}
@@ -22,6 +26,10 @@
 		&--0 {
 			bottom: -243px;
 
+			@include min(dxxl) {
+				bottom: vw(-243);
+			}
+
 			@include max(d) {
 				bottom: -202px;
 			}
@@ -38,6 +46,11 @@
 		&--1 {
 			bottom: -15px;
 			right: -1px;
+
+			@include min(dxxl) {
+				bottom: vw(-15);
+				right: vw(-1);
+			}
 
 			@include max(d) {
 				bottom: -13px;
@@ -60,6 +73,10 @@
 			bottom: 43px;
 			right: 0;
 
+			@include min(dxxl) {
+				bottom: vw(43);
+			}
+
 			@include max(d) {
 				bottom: 36px;
 			}
@@ -78,6 +95,10 @@
 			bottom: 101px;
 			right: 0;
 
+			@include min(dxxl) {
+				bottom: vw(101);
+			}
+
 			@include max(d) {
 				bottom: 85px;
 			}
@@ -95,6 +116,10 @@
 		&--4 {
 			bottom: 160px;
 			right: 0;
+
+			@include min(dxxl) {
+				bottom: vw(160);
+			}
 
 			@include max(d) {
 				bottom: 133px;
@@ -116,6 +141,10 @@
 		bottom: 0;
 		right: 0;
 		object-fit: contain;
+
+		@include min(dxxl) {
+			width: vw(629);
+		}
 
 		&--after {
 			transform: translateY(calc(-100vh - 300px));

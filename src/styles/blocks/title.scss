@@ -9,6 +9,11 @@
 		font-size: 77px;
 		margin-left: -6px;
 
+		@include min(dxxl) {
+			font-size: vw(77);
+			margin-left: vw(-6);
+		}
+
 		@include max(d) {
 			font-size: fluid(60, 77, 992, 1280);
 		}
@@ -29,6 +34,10 @@
 
 	@at-root h2#{&} {
 		font-size: 25px;
+
+		@include min(dxxl) {
+			font-size: vw(25);
+		}
 
 		@include max(d) {
 			font-size: fluid(24, 25, 992, 1280);

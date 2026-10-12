@@ -7,6 +7,10 @@
 	padding: 43px 0;
 	pointer-events: none;
 
+	@include min(dxxl) {
+		padding: vw(43) 0;
+	}
+
 	@include max(tl) {
 		padding: 20px 0;
 	}
@@ -24,6 +28,10 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 20px;
+
+		@include min(dxxl) {
+			gap: vw(20);
+		}
 
 		@include max(ti) {
 			align-items: flex-start;
@@ -54,6 +62,11 @@
 		height: 34px;
 		pointer-events: auto;
 
+		@include min(dxxl) {
+			width: vw(51);
+			height: vw(34);
+		}
+
 		@include max(ti) {
 			width: 40px;
 			height: 27px;
@@ -65,6 +78,11 @@
 		width: 87px;
 		height: 17px;
 		pointer-events: auto;
+
+		@include min(dxxl) {
+			width: vw(87);
+			height: vw(17);
+		}
 
 		@include max(ti) {
 			width: 62px;

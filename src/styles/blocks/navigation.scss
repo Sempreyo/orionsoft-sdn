@@ -9,6 +9,11 @@
 	background-color: $color-tooltip-bg;
 	padding: 55px 13px 58px;
 
+	@include min(dxxl) {
+		width: vw(74);
+		padding: vw(55) vw(13) vw(58);
+	}
+
 	@include max(ti) {
 		display: none;
 	}
@@ -24,8 +29,15 @@
 	}
 
 	&__logo {
+		width: 28px;
+		height: 42px;
 		color: $color-tooltip-border;
 		transition: 0.3s ease;
+
+		@include min(dxxl) {
+			width: vw(28);
+			height: vw(42);
+		}
 	}
 
 	&__group {
@@ -34,6 +46,10 @@
 
 	&__label {
 		font-size: 18px;
+
+		@include min(dxxl) {
+			font-size: vw(18);
+		}
 	}
 
 	&__buttons {
@@ -41,6 +57,11 @@
 		flex-direction: column;
 		gap: 18px;
 		margin-top: 17px;
+
+		@include min(dxxl) {
+			gap: vw(18);
+			margin-top: vw(17);
+		}
 	}
 
 	&__button {
@@ -57,6 +78,14 @@
 		user-select: none;
 		cursor: pointer;
 		transition: 0.3s ease;
+
+		@include min(dxxl) {
+			width: vw(47);
+			height: vw(47);
+			border: vw(1) solid $color-tooltip-border;
+			border-radius: vw(2);
+			font-size: vw(24);
+		}
 
 		&:hover {
 			background-color: rgba($color-button, 0.22);

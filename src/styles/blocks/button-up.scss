@@ -10,6 +10,13 @@
 	transition: opacity 0.3s ease;
 	cursor: pointer;
 
+	@include min(dxxl) {
+		bottom: vw(20);
+		right: vw(30);
+		width: vw(50);
+		height: vw(50);
+	}
+
 	@include max(t) {
 		bottom: 20px;
 		right: 15px;

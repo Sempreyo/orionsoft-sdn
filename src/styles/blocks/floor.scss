@@ -5,6 +5,10 @@
 	height: 100vh;
 	overflow: hidden;
 
+	@include min(dxxl) {
+		min-height: vw(720);
+	}
+
 	@include max(ti) {
 		min-height: 640px;
 	}
@@ -32,6 +36,10 @@
 	&__main {
 		padding: 45px 39px;
 
+		@include min(dxxl) {
+			padding: vw(45) vw(39);
+		}
+
 		@include max(ti) {
 			display: flex;
 			flex-direction: column;
@@ -48,6 +56,11 @@
 		max-width: 500px;
 		height: 100%;
 		animation: fadeInContent 0.4s ease forwards;
+
+		@include min(dxxl) {
+			min-width: vw(500);
+			max-width: vw(500);
+		}
 
 		@include max(ti) {
 			position: relative;
@@ -79,6 +92,11 @@
 		font-size: 18px;
 		margin-top: 7px;
 
+		@include min(dxxl) {
+			font-size: vw(18);
+			margin-top: vw(7);
+		}
+
 		@include max(ti) {
 			display: none;
 		}
@@ -89,6 +107,11 @@
 		flex-direction: column;
 		gap: 26px;
 		margin-top: 35px;
+
+		@include min(dxxl) {
+			gap: vw(26);
+			margin-top: vw(35);
+		}
 
 		@include max(ti) {
 			flex-grow: 1;

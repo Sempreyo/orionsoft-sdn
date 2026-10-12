@@ -8,6 +8,13 @@
 	border-radius: 2px;
 	padding: 13px 10px 13px 13px;
 
+	@include min(dxxl) {
+		max-width: vw(170);
+		border: vw(1) solid $color-tooltip-border;
+		border-radius: vw(2);
+		padding: vw(13) vw(10) vw(13) vw(13);
+	}
+
 	@include max(t) {
 		max-width: 94px;
 		padding: 6px 10px 4px 6px;
@@ -16,6 +23,11 @@
 	&__icon {
 		width: 26px;
 		height: 26px;
+
+		@include min(dxxl) {
+			width: vw(26);
+			height: vw(26);
+		}
 
 		@include max(t) {
 			width: 20px;
@@ -28,6 +40,11 @@
 		font-size: 16px;
 		font-weight: 600;
 		margin-top: 12px;
+
+		@include min(dxxl) {
+			font-size: vw(16);
+			margin-top: vw(12);
+		}
 
 		@include max(d) {
 			font-size: fluid(12, 16, 576, 1280);
@@ -48,6 +65,11 @@
 		font-size: 10px;
 		margin-top: 3px;
 
+		@include min(dxxl) {
+			font-size: vw(10);
+			margin-top: vw(3);
+		}
+
 		@include max(d) {
 			font-size: fluid(8, 10, 576, 1280);
 		}
@@ -60,6 +82,11 @@
 	&--extended {
 		max-width: 214px;
 		padding: 13px 10px 9px 13px;
+
+		@include min(dxxl) {
+			max-width: vw(214);
+			padding: vw(13) vw(10) vw(9) vw(13);
+		}
 
 		@include max(ti) {
 			display: flex;
@@ -77,8 +104,16 @@
 				align-items: center;
 				gap: 12px;
 
+				@include min(dxxl) {
+					gap: vw(12);
+				}
+
 				span {
 					font-size: 14px;
+
+					@include min(dxxl) {
+						font-size: vw(14);
+					}
 
 					@include max(d) {
 						font-size: fluid(12, 14, 576, 1280);
@@ -104,6 +139,9 @@
 				color: $color-accent-red;
 				margin-top: 14px;
 
+				@include min(dxxl) {
+					margin-top: vw(14);
+				}
 
 				@include max(d) {
 					font-size: 16px;
@@ -119,6 +157,12 @@
 				border-top: 1px solid $color-tooltip-border;
 				padding-top: 10px;
 				margin-top: 7px;
+
+				@include min(dxxl) {
+					border-top: vw(1) solid $color-tooltip-border;
+					padding-top: vw(10);
+					margin-top: vw(7);
+				}
 
 				@include max(ti) {
 					display: none;

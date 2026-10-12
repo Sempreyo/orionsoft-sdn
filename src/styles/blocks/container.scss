@@ -5,6 +5,11 @@
 	margin: 0 auto;
 	box-sizing: border-box;
 
+	@include min(dxxl) {
+		max-width: vw(1600);
+		padding: 0 vw(20);
+	}
+
 	@include max(ti) {
 		padding: 0 20px;
 	}
