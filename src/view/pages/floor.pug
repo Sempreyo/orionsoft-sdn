@@ -1,0 +1,155 @@
+extends ../layouts/default
+
+block vars
+	-
+		const page = {
+			title: 'Orionsoft'
+		};
+
+block header
+	include ../blocks/header
+
+block main
+	section.floor
+		.floor__bg
+			+picture('bg', 'jpg', 'floor__bg-image', '')
+		.floor__navigation.navigation
+			a.navigation__logo-link(href='#', target='_blank')
+				+icon('navigation-orion', 'navigation__logo')(width='28', height='42')
+			.navigation__group
+				.navigation__label Этаж
+				.navigation__buttons
+					.navigation__button.active(data-button='4') 4
+					.navigation__button(data-button='3') 3
+					.navigation__button(data-button='2') 2
+					.navigation__button(data-button='1') 1
+		.floor__main
+			.floor__content.active(data-content='4')
+				+title('Этаж сетевых ограничений', 'floor__title')
+				.floor__subtitle Характеристики этажа:
+				.floor__tiles
+					.floor__tooltip.tooltip.tooltip--extended
+						.tooltip__icon-group
+							+icon('plan', 'tooltip__icon')
+							span Перепланировка:
+						.tooltip__title(data-tooltip-title='Не понадобилась') Невозможна
+						.tooltip__text(data-tooltip-text='Физическая инфраструктура осталась без изменений') Физическая инфраструктура осталась без изменений
+					.floor__chat.chat.chat--task
+						.chat__author
+							.chat__author-image-wrapper
+								+picture('avatar', 'jpg', 'chat__author-image', '')
+							.chat__author-name Заказчик:
+						.chat__text(data-chat-text='В офис вышли новые работники. Но для них не хватало места, а переезд был невозможен.')
+						+button('Улучшить этаж', 'button--small chat__button chat__button--update', '', 'link-arrow')
+					.floor__chat.chat.chat--solution
+						.chat__author
+							.chat__author-image-wrapper
+								+picture('avatar2', 'jpg', 'chat__author-image', '')
+							.chat__author-name.chat__author-name--blue Инженер Орион Софт:
+						.chat__text(data-chat-text='Мы создали для них отдельные пространства, не перестраивая весь дом.')
+						+button('Читать кейс', 'button--small chat__button chat__button--space', '#', 'link-arrow')
+			.floor__content(data-content='3')
+				+title('Этаж микросегментации', 'floor__title')
+				.floor__subtitle Характеристики этажа:
+				.floor__tiles
+					.floor__tooltip.tooltip.tooltip--extended
+						.tooltip__icon-group
+							+icon('lock', 'tooltip__icon')
+							span Безопасность:
+						.tooltip__title(data-tooltip-title='Каждая комната') Только периметр
+						.tooltip__text(data-tooltip-text='Периметр плюс защита сети изнутри') Защищен только внешний периметр
+					.floor__chat.chat.chat--task
+						.chat__author
+							.chat__author-image-wrapper
+								+picture('avatar', 'jpg', 'chat__author-image', '')
+							.chat__author-name Заказчик:
+						.chat__text(data-chat-text='Даже если грабитель сможет проникнуть через окно в одну из комнат, он не должен попасть во все остальные!')
+						+button('Улучшить этаж', 'button--small chat__button chat__button--update', '', 'link-arrow')
+					.floor__chat.chat.chat--solution
+						.chat__author
+							.chat__author-image-wrapper
+								+picture('avatar2', 'jpg', 'chat__author-image', '')
+							.chat__author-name.chat__author-name--blue Инженер Орион Софт:
+						.chat__text(data-chat-text='Мы поставили между помещениями прочные стены и двери, которые открываются только зарегистрированным жильцам.')
+						+button('Читать кейс', 'button--small chat__button chat__button--space', '#', 'link-arrow')
+			.floor__content(data-content='2')
+				+title('Этаж защиты трафика', 'floor__title')
+				.floor__subtitle Характеристики этажа:
+				.floor__tiles
+					.floor__tooltip.tooltip.tooltip--extended
+						.tooltip__icon-group
+							+icon('eye', 'tooltip__icon')
+							span Посылок проверяется:
+						.tooltip__title(data-tooltip-title='100 из 100') 0 из 100
+						.tooltip__text(data-tooltip-text='Трафик между виртуальными машинами проверяется на лету') Внутренний трафик идёт без проверки содержимого
+					.floor__chat.chat.chat--task
+						.chat__author
+							.chat__author-image-wrapper
+								+picture('avatar', 'jpg', 'chat__author-image', '')
+							.chat__author-name Заказчик:
+						.chat__text(data-chat-text='Мне нужна уверенность, что никто из зарегистрированных рабочих не передаст ничего запрещенного в посылке.')
+						+button('Улучшить этаж', 'button--small chat__button chat__button--update', '', 'link-arrow')
+					.floor__chat.chat.chat--solution
+						.chat__author
+							.chat__author-image-wrapper
+								+picture('avatar2', 'jpg', 'chat__author-image', '')
+							.chat__author-name.chat__author-name--blue Инженер Орион Софт:
+						.chat__text(data-chat-text='За 2 недели установили систему фильтрации - она отследит, чтобы передавали только разрешенные грузы.')
+						+button('Читать кейс', 'button--small chat__button chat__button--space', '#', 'link-arrow')
+			.floor__content(data-content='1')
+				+title('Офис orion soft', 'floor__title')
+				.floor__tiles.floor__tiles--last
+					.floor__chat.chat.chat--solution.chat--last
+						.chat__author
+							.chat__author-image-wrapper
+								+picture('avatar2', 'jpg', 'chat__author-image', '')
+							.chat__author-name.chat__author-name--blue Инженер Орион Софт:
+						.chat__text(data-chat-text='Читайте больше о возможностях SDN <br> в&nbsp;расширенной редакции zVirt')
+				.floor__news.news
+					a.news__item(href='#',  target='_blank')
+						span Топ вопросов о VDI и терминальном доступе
+						+icon('chevron')(width='8', height='13')
+					a.news__item(href='#',  target='_blank')
+						span Топ вопросов о VDI и терминальном доступе
+						+icon('chevron')(width='8', height='13')
+					a.news__item(href='#',  target='_blank')
+						span Топ вопросов о VDI и терминальном доступе
+						+icon('chevron')(width='8', height='13')
+					a.news__item(href='#',  target='_blank')
+						span Топ вопросов о VDI и терминальном доступе
+						+icon('chevron')(width='8', height='13')
+					a.news__item(href='#',  target='_blank')
+						span Топ вопросов о VDI и терминальном доступе
+						+icon('chevron')(width='8', height='13')
+					a.news__item(href='#',  target='_blank')
+						span Топ вопросов о VDI и терминальном доступе
+						+icon('chevron')(width='8', height='13')
+					a.news__item(href='#',  target='_blank')
+						span Топ вопросов о VDI и терминальном доступе
+						+icon('chevron')(width='8', height='13')
+					a.news__item(href='#',  target='_blank')
+						span Топ вопросов о VDI и терминальном доступе
+						+icon('chevron')(width='8', height='13')
+					a.news__item(href='#',  target='_blank')
+						span Топ вопросов о VDI и терминальном доступе
+						+icon('chevron')(width='8', height='13')
+					a.news__item(href='#',  target='_blank')
+						span Топ вопросов о VDI и терминальном доступе
+						+icon('chevron')(width='8', height='13')
+			.floor__nav-mobile
+				+button('Улучшить этаж', 'button--small floor__button-mobile js-mobile-update', '', 'link-arrow')
+				+button('Следующий этаж', 'button--small floor__button-mobile floor__button-mobile--next js-mobile-next', '', 'link-arrow')
+			.floor__building.building
+				.building__wrapper.building__wrapper--0
+					+picture('floor0', 'png', 'building__image', '')
+				.building__wrapper.building__wrapper--1(data-floor='1')
+					+picture('floor1', 'png', 'building__image', '')
+				.building__wrapper.building__wrapper--2(data-floor='2')
+					+picture('floor2before', 'png', 'building__image building__image--before', '')
+					+picture('floor2after', 'png', 'building__image building__image--after', '')
+				.building__wrapper.building__wrapper--3(data-floor='3')
+					+picture('floor3before', 'png', 'building__image building__image--before', '')
+					+picture('floor3after', 'png', 'building__image building__image--after', '')
+				.building__wrapper.building__wrapper--4(data-floor='4')
+					+picture('floor4before', 'png', 'building__image building__image--before', '')
+					+picture('floor4after', 'png', 'building__image building__image--after', '')

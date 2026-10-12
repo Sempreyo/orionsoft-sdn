@@ -1,0 +1,42 @@
+.news {
+	max-width: 425px;
+	width: 100%;
+
+	@include max(d) {
+		max-width: 345px;
+	}
+
+	@include max(tl) {
+		max-width: 295px;
+	}
+
+	@include max(ti) {
+		max-width: 425px;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 15px;
+		width: 100%;
+		padding: 10px 0;
+		border-bottom: 1px solid rgba($color-button, 0.22);
+		color: $color-text;
+		font-size: 12px;
+		opacity: 0;
+		transform: translateY(-20px);
+
+		&:hover {
+			svg,
+			span {
+				color: $color-button;
+			}
+		}
+
+		svg,
+		span {
+			transition: 0.3s ease;
+		}
+	}
+}

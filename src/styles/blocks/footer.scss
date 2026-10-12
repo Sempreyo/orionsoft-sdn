@@ -1,0 +1,181 @@
+.footer {
+	$parent: &;
+
+	position: absolute;
+	left: 0;
+	z-index: 5;
+	width: 100%;
+	padding: 17px 0;
+	background: rgba(71, 100, 255, 0.31);
+	backdrop-filter: blur(7px);
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include max(t) {
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		& > a {
+			line-height: 0;
+		}
+	}
+
+	&__logo-orion {
+		color: $color-text;
+		width: 41px;
+		height: 26px;
+		transition: 0.3s ease;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		align-items: center;
+		gap: 80px;
+		font-size: 13px;
+		line-height: 1.5;
+		margin-left: 210px;
+
+		@include max(tl) {
+			margin-left: 0;
+		}
+
+		@include max(ti) {
+			flex-direction: column;
+			gap: 5px;
+			width: 100%;
+			font-size: 12px;
+			line-height: 1.2;
+		}
+
+		@include max(t) {
+			flex-direction: row;
+			justify-content: center;
+			gap: 20px;
+		}
+
+		a {
+			transition: 0.3s ease;
+
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&__socials {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+
+	&__socials-item {
+		line-height: 0;
+		transition: 0.3s ease;
+
+		&:hover {
+			opacity: 0.7;
+		}
+
+		svg {
+			width: 27px;
+			height: 27px;
+		}
+	}
+
+	&__adv {
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1;
+
+		@include max(ti) {
+			left: 24px;
+			transform: none;
+		}
+
+		&--relative {
+			position: relative;
+			bottom: unset;
+			left: unset;
+			transform: none;
+			display: inline-flex;
+			margin-top: 40px;
+
+			#{$parent}__adv-tooltip {
+				left: 0;
+			}
+		}
+
+		&:hover {
+			#{$parent}__adv-tooltip {
+				opacity: 1;
+				pointer-events: auto;
+			}
+		}
+
+		span {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			color: $color-text;
+			font-size: 12px;
+			cursor: pointer;
+
+			&::before {
+				content: "";
+				width: 5px;
+				height: 5px;
+				background-color: $color-text;
+			}
+		}
+	}
+
+	&__adv-tooltip {
+		position: absolute;
+		left: -100px;
+		bottom: 100%;
+		width: 270px;
+		border: 2px solid $color-button;
+		background: rgba($color-background, 0.7);
+		backdrop-filter: blur(11px);
+		border-radius: 2px;
+		padding: 20px 10px;
+		opacity: 0;
+		pointer-events: none;
+		transition: 0.3s ease;
+
+		@include max(ti) {
+			left: 0;
+		}
+	}
+
+	&__adv-tooltip-block {
+		color: $color-text;
+		font-size: 12px;
+		line-height: 1.2;
+
+		a {
+			color: $color-text;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		& + #{$parent}__adv-tooltip-block {
+			margin-top: 12px;
+			padding-top: 12px;
+			border-top: 1px solid $color-text;
+		}
+	}
+}

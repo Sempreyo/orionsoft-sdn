@@ -1,0 +1,129 @@
+.tooltip {
+	$parent: &;
+
+	max-width: 170px;
+	width: 100%;
+	background-color: rgba($color-tooltip-bg, 0.7);
+	border: 1px solid $color-tooltip-border;
+	border-radius: 2px;
+	padding: 13px 10px 13px 13px;
+
+	@include max(t) {
+		max-width: 94px;
+		padding: 6px 10px 4px 6px;
+	}
+
+	&__icon {
+		width: 26px;
+		height: 26px;
+
+		@include max(t) {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	&__title {
+		color: $color-title;
+		font-size: 16px;
+		font-weight: 600;
+		margin-top: 12px;
+
+		@include max(d) {
+			font-size: fluid(12, 16, 576, 1280);
+		}
+
+		@include max(tl) {
+			margin-top: 4px;
+		}
+
+		@include max(t) {
+			font-size: 8px;
+			margin-top: 2px;
+		}
+	}
+
+	&__text {
+		color: $color-caption;
+		font-size: 10px;
+		margin-top: 3px;
+
+		@include max(d) {
+			font-size: fluid(8, 10, 576, 1280);
+		}
+
+		@include max(t) {
+			display: none;
+		}
+	}
+
+	&--extended {
+		max-width: 214px;
+		padding: 13px 10px 9px 13px;
+
+		@include max(ti) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 5px;
+			max-width: 288px;
+			padding: 12px 10px;
+			border-radius: 4px;
+		}
+
+		#{$parent} {
+			&__icon-group {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+
+				span {
+					font-size: 14px;
+
+					@include max(d) {
+						font-size: fluid(12, 14, 576, 1280);
+					}
+
+					@include max(ti) {
+						font-weight: 500;
+					}
+
+					@include max(t) {
+						font-size: 12px;
+					}
+				}
+			}
+
+			&__icon {
+				@include max(ti) {
+					display: none;
+				}
+			}
+
+			&__title {
+				color: $color-accent-red;
+				margin-top: 14px;
+
+
+				@include max(d) {
+					font-size: 16px;
+				}
+
+				@include max(ti) {
+					font-size: 18px;
+					margin-top: 0;
+				}
+			}
+
+			&__text {
+				border-top: 1px solid $color-tooltip-border;
+				padding-top: 10px;
+				margin-top: 7px;
+
+				@include max(ti) {
+					display: none;
+				}
+			}
+		}
+	}
+}

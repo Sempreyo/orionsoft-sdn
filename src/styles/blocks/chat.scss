@@ -1,0 +1,142 @@
+.chat {
+	position: relative;
+	max-width: 394px;
+	background-color: $color-tooltip-bg;
+	border: 1px solid $color-tooltip-border;
+	border-radius: 2px;
+	padding: 14px 25px 18px 18px;
+	margin-left: 48px;
+	opacity: 0;
+	transform: translateY(-20px);
+
+	@include max(d) {
+		max-width: 300px;
+	}
+
+	@include max(tl) {
+		margin-left: 0;
+	}
+
+	@include max(ti) {
+		align-self: center;
+		max-width: 288px;
+		width: 100%;
+		border-radius: 6px;
+		padding: 14px 12px 13px;
+	}
+
+	&__author {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+
+		@include max(ti) {
+			gap: 11px;
+		}
+	}
+
+	&__author-image-wrapper {
+		position: absolute;
+		top: 0;
+		left: -50px;
+		width: 36px;
+		height: 36px;
+		border-radius: 5px;
+		overflow: hidden;
+
+		@include max(tl) {
+			position: relative;
+			top: unset;
+			left: unset;
+		}
+
+		@include max(ti) {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	&__author-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__author-name {
+		color: $color-title;
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		@include max(ti) {
+			font-size: 11px;
+		}
+
+		&--blue {
+			color: $color-accent-blue;
+		}
+	}
+
+	&__text {
+		font-size: 12px;
+		line-height: 1.3;
+		margin-top: 7px;
+
+		@include max(ti) {
+			margin-top: 10px;
+		}
+	}
+
+	&__button {
+		margin-top: 17px;
+		opacity: 0;
+
+		@include max(ti) {
+			display: none;
+			max-width: 100%;
+			clip-path: unset;
+			border-radius: 6px;
+			background-color: transparent;
+			border: 1px solid $color-tooltip-border;
+			font-size: 14px;
+			margin-top: 9px;
+		}
+
+		&:hover {
+			@include max(ti) {
+				background-color: $color-tooltip-border;
+			}
+		}
+
+		svg {
+			@include max(ti) {
+				width: 17px;
+				height: 12px;
+			}
+		}
+
+		&--space {
+			justify-content: space-between;
+
+			@include max(ti) {
+				display: flex;
+			}
+		}
+	}
+
+	&--last {
+		@include max(ti) {
+			align-self: flex-start;
+		}
+	}
+
+	&--solution:not(.chat--last) {
+		@include max(ti) {
+			height: 0;
+			padding: 0;
+			border: 0;
+			margin-bottom: -13px;
+			overflow: hidden;
+		}
+	}
+}

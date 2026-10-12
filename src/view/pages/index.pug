@@ -1,0 +1,48 @@
+extends ../layouts/default
+
+block vars
+	-
+		const page = {
+			title: 'Orionsoft'
+		};
+
+block header
+	include ../blocks/header
+
+block main
+	section.hero
+		.hero__bg
+			+picture('bg', 'jpg', 'hero__bg-image', '')
+		.container.hero__container
+			.hero__content
+				+title('Сеть как дом', 'hero__title', 'h1')
+				.hero__subtitle Как переход к <span>SDN</span> ускоряет и&nbsp;защищает бизнес
+				.hero__text
+					p.
+						<span>Orion soft</span> показывает на&nbsp;примере многоквартирного дома показываем, как SDN снимает ограничения обычной
+						сети и&nbsp;защищает инфраструктуру изнутри.
+					p.
+						Внутри — реальные кейсы из&nbsp;финансовой и&nbsp;нефтегазовой отраслей.
+				+button('Начать осмотр', 'hero__button', '/floor.html', 'link-arrow')
+			.hero__building
+				+picture('roof', 'png', 'hero__roof', '')
+				+picture('atm', 'png', 'hero__thing hero__thing--atm', '')
+				+picture('box', 'png', 'hero__thing hero__thing--box', '')
+				+picture('barrel', 'png', 'hero__thing hero__thing--barrel', '')
+				.hero__mobile-gradient
+				.hero__tooltip.hero__tooltip--1.tooltip
+					+icon('plan', 'tooltip__icon')
+					.tooltip__title Масштабирование
+					.tooltip__text без перепланировки сети
+				.hero__tooltip.hero__tooltip--2.tooltip
+					+icon('lock', 'tooltip__icon')
+					.tooltip__title Безопасность
+					.tooltip__text каждой виртуальной машины
+				.hero__tooltip.hero__tooltip--3.tooltip
+					+icon('eye', 'tooltip__icon')
+					.tooltip__title Проверка
+					.tooltip__text внутреннего трафика
+
+
+block footer
+	include ../blocks/footer

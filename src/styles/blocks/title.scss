@@ -1,0 +1,49 @@
+.title {
+	color: $color-title;
+	font-family: $secondFont;
+	font-weight: 500;
+	line-height: 1.2;
+	text-transform: uppercase;
+
+	@at-root h1#{&} {
+		font-size: 77px;
+		margin-left: -6px;
+
+		@include max(d) {
+			font-size: fluid(60, 77, 992, 1280);
+		}
+
+		@include max(tl) {
+			font-size: fluid(45, 60, 768, 992);
+			margin-left: 0;
+		}
+
+		@include max(ti) {
+			font-size: fluid(28, 45, 576, 768);
+		}
+
+		@include max(t) {
+			font-size: 28px;
+		}
+	}
+
+	@at-root h2#{&} {
+		font-size: 25px;
+
+		@include max(d) {
+			font-size: fluid(24, 25, 992, 1280);
+		}
+
+		@include max(tl) {
+			font-size: fluid(23, 24, 768, 992);
+		}
+
+		@include max(ti) {
+			font-size: fluid(22, 23, 576, 768);
+		}
+
+		@include max(t) {
+			font-size: 22px;
+		}
+	}
+}

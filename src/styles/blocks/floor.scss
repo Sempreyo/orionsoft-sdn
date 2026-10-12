@@ -1,0 +1,153 @@
+.floor {
+	display: flex;
+	width: 100%;
+	min-height: 720px;
+	height: 100vh;
+	overflow: hidden;
+
+	@include max(ti) {
+		min-height: 640px;
+	}
+
+	&__bg {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(270deg, rgba(13, 14, 25, 0) 0%, rgba(13, 14, 25, 0.32) 68%, rgba(13, 14, 25, 0.4) 100%);
+		}
+	}
+
+	&__bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top;
+	}
+
+	&__main {
+		padding: 45px 39px;
+
+		@include max(ti) {
+			display: flex;
+			flex-direction: column;
+			gap: 13px;
+			width: 100%;
+			padding: 70px 17px 12px;
+		}
+	}
+
+	&__content {
+		display: none;
+		flex-direction: column;
+		min-width: 500px;
+		max-width: 500px;
+		height: 100%;
+		animation: fadeInContent 0.4s ease forwards;
+
+		@include max(ti) {
+			position: relative;
+			z-index: 1;
+			min-width: auto;
+			max-width: 100%;
+			width: 100%;
+		}
+
+		&.active {
+			display: flex;
+		}
+	}
+
+	&__title,
+	&__subtitle,
+	&__tooltip,
+	&__chat {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+
+	&__tooltip .tooltip__title,
+	&__tooltip .tooltip__text {
+		opacity: 0;
+	}
+
+	&__subtitle {
+		font-size: 18px;
+		margin-top: 7px;
+
+		@include max(ti) {
+			display: none;
+		}
+	}
+
+	&__tiles {
+		display: flex;
+		flex-direction: column;
+		gap: 26px;
+		margin-top: 35px;
+
+		@include max(ti) {
+			flex-grow: 1;
+			gap: 8px;
+			width: 100%;
+			margin-top: 11px;
+		}
+
+		&--last {
+			@include max(ti) {
+				flex-grow: unset;
+			}
+		}
+	}
+
+	&__tooltip {
+		@include max(ti) {
+			margin-bottom: auto;
+		}
+	}
+
+	&__news {
+		margin-top: auto;
+
+		@include max(ti) {
+			margin-top: 26px;
+		}
+	}
+
+	&__building {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+
+		@include max(ti) {
+			right: unset;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__nav-mobile {
+		display: none;
+
+		@include max(ti) {
+			position: relative;
+			z-index: 1;
+			align-self: center;
+			display: block;
+			max-width: 288px;
+			width: 100%;
+		}
+	}
+
+	&__button-mobile {
+		max-width: 100%;
+
+		&--next {
+			display: none;
+		}
+	}
+}

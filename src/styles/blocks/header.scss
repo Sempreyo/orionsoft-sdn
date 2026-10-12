@@ -1,0 +1,74 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	width: 100%;
+	padding: 43px 0;
+	pointer-events: none;
+
+	@include max(tl) {
+		padding: 20px 0;
+	}
+
+	&--floor {
+		display: none;
+
+		@include max(ti) {
+			display: block;
+		}
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+
+		@include max(ti) {
+			align-items: flex-start;
+		}
+
+		a {
+			display: inline-flex;
+			align-items: center;
+		}
+	}
+
+	&__logo-orion,
+	&__logo-cnews {
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: $color-button;
+		}
+
+		path {
+			display: none;
+		}
+	}
+
+	&__logo-orion {
+		color: $color-text;
+		width: 51px;
+		height: 34px;
+		pointer-events: auto;
+
+		@include max(ti) {
+			width: 40px;
+			height: 27px;
+		}
+	}
+
+	&__logo-cnews {
+		color: $color-text;
+		width: 87px;
+		height: 17px;
+		pointer-events: auto;
+
+		@include max(ti) {
+			width: 62px;
+			height: 12px;
+		}
+	}
+}

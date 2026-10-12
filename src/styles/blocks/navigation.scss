@@ -1,0 +1,72 @@
+.navigation {
+	$parent: &;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	width: 74px;
+	background-color: $color-tooltip-bg;
+	padding: 55px 13px 58px;
+
+	@include max(ti) {
+		display: none;
+	}
+
+	&__logo-link {
+		line-height: 0;
+
+		&:hover {
+			#{$parent}__logo {
+				color: $color-accent-blue;
+			}
+		}
+	}
+
+	&__logo {
+		color: $color-tooltip-border;
+		transition: 0.3s ease;
+	}
+
+	&__group {
+		margin: auto 0;
+	}
+
+	&__label {
+		font-size: 18px;
+	}
+
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		margin-top: 17px;
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 47px;
+		height: 47px;
+		border: 1px solid $color-tooltip-border;
+		border-radius: 2px;
+		color: $color-tooltip-border;
+		font-size: 24px;
+		font-weight: 600;
+		user-select: none;
+		cursor: pointer;
+		transition: 0.3s ease;
+
+		&:hover {
+			background-color: rgba($color-button, 0.22);
+		}
+
+		&.active {
+			background-color: $color-accent-blue;
+			border-color: $color-accent-blue;
+			color: $color-text;
+			pointer-events: none;
+		}
+	}
+}
